@@ -9,11 +9,12 @@ puts "What would you like to do?"
 
   # loop that generates main menu selections 
   loop do
-
+  
   puts "Main Menu: "
   puts "1. Add a task"
   puts "2. View tasks"
-  puts "3. Exit"
+  puts "3. Delete tasks"
+  puts "4. Exit"
 
   print "Enter your choice: "
 
@@ -29,10 +30,16 @@ puts "What would you like to do?"
   elsif choice == "2"
     puts "Here are your pending tasks"
     puts todo_list
-    # upcoming feature: puts "would you like to delete a task?" 
     
-  # if 3 is selected, exits the program 
+  # 
   elsif choice == "3"
+    puts "Your current tasks are #{todo_list}"
+    puts "Which task would you like to delete?" 
+
+    #puts "Would you like to delete another task"
+
+  # if 4 is selected, exits the program 
+  elsif choice == "4"
     puts "Goodbye!"
     exit
 
