@@ -29,7 +29,14 @@ puts "What would you like to do?"
   # if 2 is selected, prints the to-do list array to console 
   elsif choice == "2"
     puts "Here are your pending tasks"
-    puts todo_list
+
+    if todo_list.empty?
+      puts "You have no pending tasks"
+
+    else
+      puts todo_list
+    end
+    
     
   # 
   elsif choice == "3"
