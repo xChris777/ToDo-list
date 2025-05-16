@@ -1,7 +1,6 @@
 # create the To-Do List array 
 todo_list = [ ]
 
-# welcome message 
 puts "Welcome to Chris' To-Do List app. Made in Ruby." 
 
 puts "What would you like to do?" 
@@ -23,7 +22,9 @@ puts "What would you like to do?"
   # and then adds it to the todo_list array 
   if main_menu_choice == "1"
     puts "Input task: "
+
     task_title = gets.chomp
+
     todo_list << task_title
 
   #if 2 is selected, prints the to-do list array to console 
@@ -84,7 +85,7 @@ puts "What would you like to do?"
     #   if gets.chomp = "Yes" || "Y" || "YES" 
   
     #   elsif gets.chomp = "No" || "N" || "NO"
-
+    
     #   else 
     #     puts "Invalid selection, please use Y or N" 
     #   end
