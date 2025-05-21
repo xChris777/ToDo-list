@@ -36,20 +36,22 @@ puts "What would you like to do?"
 
     else
       todo_list.each.with_index(1) do |tasks, index|
-    puts "#{index}. #{tasks.capitalize}" end
+    puts "#{index}. #{tasks.capitalize}" 
+    end 
     end
     #delete task feature, checks if todo list is empty and prints a message if it is. If it isn't,
     #it lists the tasks in a numbered list starting at 1, with captitalization. 
   elsif main_menu_choice == "3"
     if todo_list.empty?
       puts "No pending tasks available to delete."
-
-    elsif todo_list.each.with_index(1) do |tasks, index|
+    else 
+    todo_list.each.with_index(1) do |tasks, index|
     puts "#{index}. #{tasks.capitalize}"
+    puts "Which task would you like to delete?" 
     end
-
-      puts "Which task would you like to delete?" 
-
+      #Goal is to remove if/elsif/else statement, and instead get user input, convert to int
+      #and then check the array for the index of the task, deleting the task at that index if it exists.
+      
       #get user input for task to delete and assign to variable
       task_number = gets.chomp.to_i
 
@@ -79,7 +81,7 @@ puts "What would you like to do?"
       else
         puts "Invalid selection. This program currently supports 6 active tasks."
       end
-      
+    end
     # logic for asking if another task should be deleted
     # puts "Would you like to delete another task"
     #   if gets.chomp = "Yes" || "Y" || "YES" 
@@ -91,11 +93,10 @@ puts "What would you like to do?"
     #   end
 
     # if 4 is selected, exits the program 
-    elsif main_menu_choice == "4"
+  elsif main_menu_choice == "4"
     puts "Goodbye!"
     exit
     
-    else puts "Oops, that was an invalid selection! Please input 1, 2, 3 or 4."
-    end
+  else puts "Oops, that was an invalid selection! Please input 1, 2, 3 or 4."
   end
 end
