@@ -5,7 +5,7 @@ puts "Welcome to Chris' To-Do List app. Made in Ruby."
 puts
 puts "What would you like to do?" 
 
-  # loop that generates main menu selections 
+  #loop that generates main menu selections
   loop do
   puts
   puts "Main Menu: "
@@ -77,6 +77,7 @@ puts "What would you like to do?"
     # if 4 is selected, exits the program 
   elsif main_menu_choice == "4"
     puts
+
     puts "Goodbye!"
     exit
   elsif main_menu_choice == "devmode" 
