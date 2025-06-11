@@ -2,18 +2,18 @@
 todo_list = [ ]
 
 puts "Welcome to Chris' To-Do List app. Made in Ruby." 
-
+puts
 puts "What would you like to do?" 
 
   # loop that generates main menu selections 
   loop do
-  
+  puts
   puts "Main Menu: "
   puts "1. Add a task"
   puts "2. View tasks"
   puts "3. Delete tasks"
   puts "4. Exit"
-
+  puts
   print "Enter your choice: "
 
   main_menu_choice = gets.chomp 
@@ -30,7 +30,7 @@ puts "What would you like to do?"
   #if 2 is selected, prints the to-do list array to console 
   elsif main_menu_choice == "2"
     puts "Here are your pending tasks: "
-
+    puts
     if todo_list.empty?
       puts "You have no pending tasks."
 
@@ -46,40 +46,22 @@ puts "What would you like to do?"
       puts "No pending tasks available to delete."
     else 
     todo_list.each.with_index(1) do |tasks, index|
-    puts "#{index}. #{tasks.capitalize}"
-    puts "Which task would you like to delete?" 
+    puts "#{index}. #{tasks.capitalize}" 
     end
+    puts "Which task would you like to delete?"
       #Goal is to remove if/elsif/else statement, and instead get user input, convert to int
       #and then check the array for the index of the task, deleting the task at that index if it exists.
       
       #get user input for task to delete and assign to variable
       task_number = gets.chomp.to_i
 
-      if task_number == 1
-        todo_list.delete_at(0)
-        puts "If that selection corresponds to a task, I've deleted it!"
-        
-      elsif task_number == 2
-        todo_list.delete_at(1)
-        puts "If that selection corresponds to a task, I've deleted it!"
-
-      elsif task_number == 3
-        todo_list.delete_at(2)
-        puts "If that selection corresponds to a task, I've deleted it!"
-
-      elsif task_number == 4
-        todo_list.delete_at(3)
-        puts "If that selection corresponds to a task, I've deleted it!"
-
-      elsif task_number == 5
-        todo_list.delete_at(4)
-        puts "If that selection corresponds to a task, I've deleted it!"
-
-      elsif task_number == 6
-        todo_list.delete_at(5)  
-        puts "If that selection corresponds to a task, I've deleted it!"
+      #
+      if task_number.between?(1, todo_list.length) 
+        todo_list.delete_at(task_number - 1)
+        puts
+        puts "Task #{task_number} has been deleted successfully!"
       else
-        puts "Invalid selection. This program currently supports 6 active tasks."
+        puts "Invalid selection, please choose a valid task number."
       end
     end
     # logic for asking if another task should be deleted
@@ -94,9 +76,17 @@ puts "What would you like to do?"
 
     # if 4 is selected, exits the program 
   elsif main_menu_choice == "4"
+    puts
     puts "Goodbye!"
     exit
-    
-  else puts "Oops, that was an invalid selection! Please input 1, 2, 3 or 4."
+  elsif main_menu_choice == "devmode" 
+    puts
+    puts "Hey Chris, dev mode engaged!"
+    todo_list << "test1"
+    todo_list << "test2"
+    todo_list << "test3"
+  else 
+    puts
+    puts "Oops, that was an invalid selection! Please input 1, 2, 3 or 4."
   end
 end
